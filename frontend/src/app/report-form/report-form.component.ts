@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbDateStruct, NgbCalendar, NgbDate } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 
 import { Report } from '../report';
 import { symptoms } from '../symptoms';
+import { ReportsService } from '../reports.service';
 
 @Component({
   selector: 'app-report-form',
@@ -15,8 +16,10 @@ export class ReportFormComponent implements OnInit {
   model = Report.usingDefaults();
   submitted = false;
 
-  constructor(private calendar: NgbCalendar) {
-  }
+  constructor(
+    private calendar: NgbCalendar,
+    private reportsService: ReportsService
+  ) { }
 
   hasSymptom(symptom: string): boolean {
     return this.model.symptoms.includes(symptom);
@@ -31,9 +34,13 @@ export class ReportFormComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
+  submit() {
+    this.reportsService.postReport(this.model)
+      .subscribe((report) => { }, (error) => {
+        console.log("Error", error);
+      })
   }
 
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
+  ngOnInit(): void {
+  }
 }

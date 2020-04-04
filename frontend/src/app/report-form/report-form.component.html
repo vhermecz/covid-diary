@@ -1,5 +1,5 @@
 <div class="container">
-    <form #reportForm="ngForm">
+    <form #reportForm="ngForm" (ngSubmit)="submit()">
         <div class="form-group">
             <label for="date">Dátum</label>
             <div class="input-group">
