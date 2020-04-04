@@ -26,17 +26,24 @@
 
         <div class="form-group">
             <label for="temperature">Temperature</label>
-            <input
-                class="form-control"
-                id="temperature"
-                name="temperature"
-                [(ngModel)]="model.temperature"
-                type="number"
-                step="0.1"
-                min="35.0"
-                max="43.0"
-                required
-            />
+            <div class="input-group">
+                <input
+                    class="form-control"
+                    id="temperature"
+                    name="temperature"
+                    [(ngModel)]="model.temperature"
+                    type="number"
+                    step="0.1"
+                    min="35.0"
+                    max="43.0"
+                    required
+                />
+                <div class="input-group-append">
+                    <span class="input-group-text">
+                        <fa-icon icon="thermometer"></fa-icon>
+                    </span>
+                </div>
+            </div>
         </div>
 
         <button type="submit" class="btn btn-success">Submit</button>
