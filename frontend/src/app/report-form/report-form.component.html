@@ -1,0 +1,47 @@
+<div class="container">
+    <form #reportForm="ngForm">
+        <div class="form-group">
+            <label for="date">Dátum</label>
+            <div class="input-group">
+                <input
+                    class="form-control"
+                    placeholder="yyyy-mm-dd"
+                    name="date"
+                    [(ngModel)]="date"
+                    (dateSelect)="dateSelected($event)"
+                    ngbDatepicker
+                    #d="ngbDatepicker"
+                />
+                <div class="input-group-append">
+                    <button
+                        class="btn btn-secondary"
+                        (click)="d.toggle()"
+                        type="button"
+                    >
+                        <fa-icon icon="calendar"></fa-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div *ngFor="let symptom of symptoms" class="col">
+                    <button
+                        type="button"
+                        data-toggle="button"
+                        class="btn btn-sm btn-secondary symptom-button"
+                        [class.selected]="hasSymptom(symptom.id)"
+                        (click)="toggleSymptom(symptom.id)"
+                    >
+                        {{ symptom.hu }}
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success">Tünetek jelentése</button>
+    </form>
+
+    <pre>{{ model | json }}</pre>
+</div>
