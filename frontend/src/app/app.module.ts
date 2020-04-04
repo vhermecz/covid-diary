@@ -8,14 +8,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { SymptomsComponent } from './symptoms/symptoms.component';
+import { ReportFormComponent } from './report-form/report-form.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 const appRoutes: Routes = [
   {
-    path: 'symptoms',
-    component: SymptomsComponent,
-    data: { title: 'Symptoms' }
+    path: 'report',
+    component: ReportFormComponent,
+    data: { title: 'Report symptoms' }
   },
   {
     path: '',
@@ -26,7 +26,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    SymptomsComponent,
+    ReportFormComponent,
     WelcomeComponent
   ],
   imports: [
