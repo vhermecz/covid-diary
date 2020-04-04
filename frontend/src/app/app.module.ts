@@ -1,11 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ServiceWorkerModule } from '@angular/service-worker';
+import { BrowserModule } from '@angular/platform-browser';
 import { environment } from '../environments/environment';
-import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AppComponent } from './app.component';
 import { ReportFormComponent } from './report-form/report-form.component';
@@ -30,16 +30,17 @@ const appRoutes: Routes = [
     WelcomeComponent
   ],
   imports: [
-    BrowserModule,
     BrowserAnimationsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    BrowserModule,
     FormsModule,
+    NgbModule,
     RouterModule.forRoot(
       appRoutes,
       {
         enableTracing: true
       } // <-- debugging purposes only
-    )
+    ),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]
