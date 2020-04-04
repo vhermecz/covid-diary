@@ -6,11 +6,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SymptomsComponent } from './symptoms/symptoms.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SymptomsComponent
+    SymptomsComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
