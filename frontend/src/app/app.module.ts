@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { ReportFormComponent } from './report-form/report-form.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faCalendar, faThermometer } from '@fortawesome/free-solid-svg-icons';
+import { faCalendar, faComments, faThermometer } from '@fortawesome/free-solid-svg-icons';
 
 const appRoutes: Routes = [
   {
@@ -51,6 +51,6 @@ const appRoutes: Routes = [
 export class AppModule {
   constructor(library: FaIconLibrary) {
     // Add an icon to the library for convenient access in other components
-    library.addIcons(faCalendar, faThermometer);
+    library.addIcons(faCalendar, faComments, faThermometer);
   }
 }
