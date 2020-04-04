@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 
 import { Report } from '../report';
 import { symptoms } from '../symptoms';
@@ -17,7 +16,6 @@ export class ReportFormComponent implements OnInit {
   submitted = false;
 
   constructor(
-    private calendar: NgbCalendar,
     private reportsService: ReportsService
   ) { }
 
