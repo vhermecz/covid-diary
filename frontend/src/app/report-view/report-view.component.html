@@ -1,1 +1,13 @@
-<p>report-view works!</p>
+<div class="container">
+    <div class="lead">
+        {{ dateFormat.format(report.date) }}
+    </div>
+    <div *ngIf="report.symptoms.length > 0">
+        <span>Tünetek:</span>
+        {{ symptomList() }}
+    </div>
+    <div *ngIf="report.comments">
+        <span>Megjegyzés:</span>
+        {{ report.comments }}
+    </div>
+</div>
