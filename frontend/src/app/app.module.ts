@@ -16,6 +16,7 @@ import { faCalendar, faComments, faThermometer } from '@fortawesome/free-solid-s
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { ReportFormComponent } from './report-form/report-form.component';
+import { ReportViewComponent } from './report-view/report-view.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 const appRoutes: Routes = [
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     ReportFormComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ReportViewComponent
   ],
   imports: [
     BrowserAnimationsModule,
