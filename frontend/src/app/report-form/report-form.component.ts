@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbDateStruct, NgbCalendar, NgbDate } from '@ng-bootstrap/ng-bootstrap';
 
 import { Report } from '../report';
 
@@ -9,10 +10,21 @@ import { Report } from '../report';
 })
 export class ReportFormComponent implements OnInit {
 
+  date: NgbDateStruct;
   model = Report.usingDefaults();
   submitted = false;
 
-  constructor() { }
+  constructor(private calendar: NgbCalendar) {
+    this.date = new NgbDate(this.model.date.getFullYear(), this.model.date.getMonth() + 1, this.model.date.getDate())
+  }
+
+  dateSelected(date: NgbDate) {
+    this.model.date = new Date(date.year, date.month - 1, date.day);
+  }
+
+  selectToday() {
+    this.date = this.calendar.getToday();
+  }
 
   ngOnInit(): void {
   }
