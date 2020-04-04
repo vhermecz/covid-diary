@@ -2,6 +2,7 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FontAwesomeModule,
     FormsModule,
+    HttpClientModule,
     NgbModule,
     RouterModule.forRoot(
       appRoutes,
