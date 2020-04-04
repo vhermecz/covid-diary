@@ -14,7 +14,7 @@
                 />
                 <div class="input-group-append">
                     <button
-                        class="btn btn-outline-secondary"
+                        class="btn btn-secondary"
                         (click)="d.toggle()"
                         type="button"
                     >
@@ -42,6 +42,16 @@
                     <span class="input-group-text">
                         &deg;C
                     </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div *ngFor="let symptom of symptoms" class="col">
+                    <button class="btn btn-secondary symptom-button">
+                        {{ symptom.hu }}
+                    </button>
                 </div>
             </div>
         </div>
