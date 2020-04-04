@@ -1,1 +1,18 @@
-<p>report-form works!</p>
+<div class="container">
+    <h2>Submit report</h2>
+    <form #reportForm="ngForm">
+        <div class="form-group">
+            <label for="temperature">Temperature</label>
+            <input
+                id="temperature"
+                name="temperature"
+                [(ngModel)]="model.temperature"
+                type="number"
+                class="form-control"
+                required
+            />
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
