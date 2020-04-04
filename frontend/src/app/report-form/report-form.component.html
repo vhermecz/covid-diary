@@ -7,8 +7,7 @@
                     class="form-control"
                     placeholder="yyyy-mm-dd"
                     name="date"
-                    [(ngModel)]="date"
-                    (dateSelect)="dateSelected($event)"
+                    [(ngModel)]="model.date"
                     ngbDatepicker
                     #d="ngbDatepicker"
                 />

@@ -26,12 +26,10 @@ export class ReportFormComponent implements OnInit {
     { id: "lack-of-smell", hu: "Csökkent szaglás, ízlelés" },
   ]
 
-  date: NgbDateStruct;
   model = Report.usingDefaults();
   submitted = false;
 
   constructor(private calendar: NgbCalendar) {
-    this.date = new NgbDate(this.model.date.getFullYear(), this.model.date.getMonth() + 1, this.model.date.getDate())
   }
 
   hasSymptom(symptom: string): boolean {
@@ -45,14 +43,6 @@ export class ReportFormComponent implements OnInit {
     } else {
       this.model.symptoms.splice(index, 1);
     }
-  }
-
-  dateSelected(date: NgbDate) {
-    this.model.date = new Date(date.year, date.month - 1, date.day);
-  }
-
-  selectToday() {
-    this.date = this.calendar.getToday();
   }
 
   ngOnInit(): void {
