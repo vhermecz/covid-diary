@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1585995003748,
+  "timestamp": 1585995700191,
   "index": "/covid-diary/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "/covid-diary/favicon.ico",
         "/covid-diary/index.html",
-        "/covid-diary/main-es2015.7d664a79f6fa60664e2c.js",
-        "/covid-diary/main-es5.7d664a79f6fa60664e2c.js",
+        "/covid-diary/main-es2015.e3f126c8050118128351.js",
+        "/covid-diary/main-es5.e3f126c8050118128351.js",
         "/covid-diary/manifest.webmanifest",
         "/covid-diary/polyfills-es2015.bbb42ff2e1c488ff52d5.js",
         "/covid-diary/polyfills-es5.0e4e1968447fab48e788.js",
@@ -49,9 +49,9 @@
     "/covid-diary/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/covid-diary/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/covid-diary/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/covid-diary/index.html": "f527338f495479a1bffb02c3da0b7f9d9bf368d5",
-    "/covid-diary/main-es2015.7d664a79f6fa60664e2c.js": "92d1d9fcdd456d7b97c1f1f000b95fc910d1bb52",
-    "/covid-diary/main-es5.7d664a79f6fa60664e2c.js": "e47dcab90805f96f5a1969262439b1495a0c03b5",
+    "/covid-diary/index.html": "3425e78c7d711627674ed2f4e0a1b97302fff06d",
+    "/covid-diary/main-es2015.e3f126c8050118128351.js": "66197dbe282cacc9ed6eec15938b98cbb67406b9",
+    "/covid-diary/main-es5.e3f126c8050118128351.js": "3f54e6d114d2f5b204dd45330908b1435a2a94df",
     "/covid-diary/manifest.webmanifest": "94f3a2514846028a19710018a3f4850be98ac84f",
     "/covid-diary/polyfills-es2015.bbb42ff2e1c488ff52d5.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
     "/covid-diary/polyfills-es5.0e4e1968447fab48e788.js": "e51a1de4f016cd689dbdbef51043dec9518c4111",
