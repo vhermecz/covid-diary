@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'covid-diary';
 
   links = [
-    { title: 'Report', fragment: 'report' }
+    { title: 'Jelentés', fragment: 'report' }
   ];
 
   constructor(public route: ActivatedRoute) { }

@@ -17,7 +17,7 @@ const appRoutes: Routes = [
   {
     path: 'report',
     component: ReportFormComponent,
-    data: { title: 'Report symptoms' }
+    data: { title: 'Tünetek jelentése' }
   },
   {
     path: '',
