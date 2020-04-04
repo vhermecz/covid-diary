@@ -1,0 +1,9 @@
+<h1>Köszönti a covid napló</h1>
+<p>Kora:{{ reporter.age }} Írszáma:{{reporter.zip}}</p>
+<ul>
+{% for s in symptoms %}
+    <li>{{ s }}</li>
+{% empty %}
+    <li>Még nincsenek tünetek</li>
+{% endfor %}
+</ul>
