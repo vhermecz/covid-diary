@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SymptomsComponent } from './symptoms/symptoms.component';
@@ -13,7 +14,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 const appRoutes: Routes = [
   {
     path: 'symptoms',
-    component: SymptomsComponent
+    component: SymptomsComponent,
+    data: { title: 'Symptoms' }
   },
   {
     path: '',
@@ -31,6 +33,7 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       {
