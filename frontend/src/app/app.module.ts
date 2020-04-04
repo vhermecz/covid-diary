@@ -16,6 +16,7 @@ import { faCalendar, faComments, faThermometer } from '@fortawesome/free-solid-s
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { ReportFormComponent } from './report-form/report-form.component';
+import { ReportLogComponent } from './report-log/report-log.component';
 import { ReportViewComponent } from './report-view/report-view.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
@@ -24,6 +25,11 @@ const appRoutes: Routes = [
     path: 'report',
     component: ReportFormComponent,
     data: { title: 'Tünetek jelentése' }
+  },
+  {
+    path: 'log',
+    component: ReportLogComponent,
+    data: { title: 'Napló' }
   },
   {
     path: '',
@@ -35,8 +41,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     ReportFormComponent,
+    ReportLogComponent,
+    ReportViewComponent,
     WelcomeComponent,
-    ReportViewComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -48,8 +55,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       {
+        // Debugging purposes only
         enableTracing: true
-      } // <-- debugging purposes only
+      }
     ),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],

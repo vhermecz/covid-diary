@@ -7,10 +7,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'covid-diary';
+  navbarCollapsed = true;
+
+  title = 'Covid Diary';
 
   links = [
-    { title: 'Jelentés', fragment: 'report' }
+    { title: 'Jelentés', fragment: 'report' },
+    { title: 'Napló', fragment: 'log' },
   ];
 
   constructor(public route: ActivatedRoute) { }
