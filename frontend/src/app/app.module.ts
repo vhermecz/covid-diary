@@ -10,7 +10,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppComponent } from './app.component';
 import { ReportFormComponent } from './report-form/report-form.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 
 const appRoutes: Routes = [
   {
@@ -47,4 +48,9 @@ const appRoutes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    // Add an icon to the library for convenient access in other components
+    library.addIcons(faCalendar);
+  }
+}
