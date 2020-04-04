@@ -49,7 +49,13 @@
         <div class="form-group">
             <div class="row">
                 <div *ngFor="let symptom of symptoms" class="col">
-                    <button class="btn btn-secondary symptom-button">
+                    <button
+                        type="button"
+                        data-toggle="button"
+                        class="btn btn-sm btn-secondary symptom-button"
+                        [class.selected]="hasSymptom(symptom.id)"
+                        (click)="toggleSymptom(symptom.id)"
+                    >
                         {{ symptom.hu }}
                     </button>
                 </div>
@@ -58,4 +64,6 @@
 
         <button type="submit" class="btn btn-success">Tünetek jelentése</button>
     </form>
+
+    <pre>{{ model | json }}</pre>
 </div>

@@ -36,6 +36,19 @@ export class ReportFormComponent implements OnInit {
     this.date = new NgbDate(this.model.date.getFullYear(), this.model.date.getMonth() + 1, this.model.date.getDate())
   }
 
+  hasSymptom(symptom: string): boolean {
+    return this.model.symptoms.includes(symptom);
+  }
+
+  toggleSymptom(symptom: string) {
+    const index = this.model.symptoms.indexOf(symptom);
+    if (index == -1) {
+      this.model.symptoms.push(symptom);
+    } else {
+      this.model.symptoms.splice(index, 1);
+    }
+  }
+
   dateSelected(date: NgbDate) {
     this.model.date = new Date(date.year, date.month - 1, date.day);
   }

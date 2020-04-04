@@ -5,3 +5,9 @@
     margin: 0.5rem;
     font-size: 80%;
 }
+
+.symptom-button.selected {
+    border: 0.2rem solid red;
+    color: white;
+    background-color: #f88;
+}

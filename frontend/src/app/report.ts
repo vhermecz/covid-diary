@@ -2,9 +2,7 @@ export class Report {
   constructor(
     public date: Date,
     public temperature: number,
-    public dryCough: boolean,
-    public wetCough: boolean,
-    public tiredness: boolean
+    public symptoms: string[]
   ) {
     this.temperature = temperature;
   }
@@ -12,6 +10,6 @@ export class Report {
   static usingDefaults(): Report {
     const now = new Date();
     const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    return new Report(today, 36.0, false, false, false);
+    return new Report(today, 36.0, []);
   }
 }
