@@ -11,22 +11,19 @@ import { Report } from '../report';
 export class ReportFormComponent implements OnInit {
 
   symptoms = [
-    {
-      id: "dry-cough", hu: "Száraz köhögés"
-    },
-    {
-      id: "wet-cough", hu: "Produktív köhögés"
-    },
-    {
-      id: "fatigue", hu: "Fáradékonyság"
-    },
-    {
-      id: "dyspnoea", hu: "Nehéz légzés"
-    },
-    {
-      id: "soar-throat", hu: "Torokfájás"
-    },
-  ];
+    { id: "fever", hu: "Láz / hőemelkedés" },
+    { id: "fatigue", hu: "Levertség" },
+    { id: "shivers", hu: "Hidegrázás" },
+    { id: "dry-cough", hu: "Száraz köhögés" },
+    { id: "wet-cough", hu: "Produktív köhögés" },
+    { id: "sore-throat", hu: "Torokfájás" },
+    { id: "runny-nose", hu: "Orrfolyás" },
+    { id: "dyspnoea", hu: "Nehézlégzés" },
+    { id: "headache", hu: "Fejfájás" },
+    { id: "joint-pains", hu: "Izületi és végtagfájdalmak" },
+    { id: "diarrhoea", hu: "Hasmenés, hasi panaszok" },
+    { id: "lack-of-smell", hu: "Csökkent szaglás, ízlelés    " },
+  ]
 
   date: NgbDateStruct;
   model = Report.usingDefaults();
