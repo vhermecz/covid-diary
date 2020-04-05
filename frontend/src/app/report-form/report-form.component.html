@@ -40,6 +40,102 @@
         </div>
 
         <div class="form-group">
+            <h4>Az elmúlt három napban...</h4>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Volt, hogy elhagytad a lakhelyed?</label>
+            <div class="input-group">
+                <select class="form-control">
+                    <option></option>
+                    <option>nem, karanténban voltam</option>
+                    <option>levegőzés / bevásárlás</option>
+                    <option>munkábajárás</option>
+                    <option>egészségügyi / más vészhelyzet</option>
+                </select>
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <fa-icon icon="comments"></fa-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Hány emberrel találkoztál?</label>
+            <div class="input-group">
+                <select class="form-control">
+                    <option></option>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2-6</option>
+                    <option>7-12</option>
+                    <option>13+</option>
+                </select>
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <fa-icon icon="comments"></fa-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Találkoztál ismert fertőzöttel?</label>
+            <div class="input-group">
+                <select class="form-control">
+                    <option></option>
+                    <option>nem tudok róla</option>
+                    <option>igen, de csak távolról</option>
+                    <option>igen, közelében is voltam</option>
+                </select>
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <fa-icon icon="comments"></fa-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="date"
+                >Találkoztál olyan emberrel, akinek felső légúti panaszai
+                voltak, vagy más miatt koronavírus-gyanűs?</label
+            >
+            <div class="input-group">
+                <select class="form-control">
+                    <option></option>
+                    <option>nem tudok róla</option>
+                    <option>igen, de csak távolról</option>
+                    <option>igen, közelében is voltam</option>
+                </select>
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <fa-icon icon="comments"></fa-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Voltál tesztelve?</label>
+            <div class="input-group">
+                <select class="form-control">
+                    <option></option>
+                    <option>nem</option>
+                    <option>igen, negatív lett</option>
+                    <option>igen, pozitív lett</option>
+                    <option>igen, még nem ismert az eredmény</option>
+                </select>
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <fa-icon icon="comments"></fa-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
             <label for="comments">Megjegyzés</label>
             <div class="input-group">
                 <textarea
@@ -58,5 +154,7 @@
         <button type="submit" class="btn btn-success">Tünetek jelentése</button>
     </form>
 
-    <pre>{{ model | json }}</pre>
+    <br /><br />
+
+    <!-- <pre>{{ model | json }}</pre> -->
 </div>
