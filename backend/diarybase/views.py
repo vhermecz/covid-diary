@@ -1,14 +1,27 @@
+"""diarybase data models
+"""
+__author__ = "Gabor Guta"
+__copyright__ = "Copyright 2020, Gabor Guta"
+__license__ = "MIT"
 from django.shortcuts import render
 from django.views.generic import ListView, CreateView
-from .models import Symptom, Reporter, EpidemicActivity
+from .models import Symptoms, Reporter, EpidemicActivity
 from rest_framework import viewsets, permissions
-from .serializers import ReporterSerializer
+from .serializers import ReporterSerializer, SymptomSerializer
 # Create your views here.
 
 
 class ReporterViewSet(viewsets.ModelViewSet):
     queryset = Reporter.objects.all()
     serializer_class = ReporterSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    lookup_field = 'user'
+
+
+class SymprtomsReportViewSet(viewsets.ModelViewSet):
+    def get_queryset(self):
+        return Symptoms.objects.filter(reporter=self.kwargs['reporter_user'])
+    serializer_class = SymptomSerializer
     permission_classes = [permissions.IsAuthenticated]
 
 
