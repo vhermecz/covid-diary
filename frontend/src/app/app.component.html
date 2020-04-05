@@ -1,9 +1,39 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">Covid Napló</a>
-    <ul ngbNav [activeId]="route.fragment | async" class="navbar-nav">
-        <li [ngbNavItem]="link.fragment" *ngFor="let link of links">
-            <a ngbNavLink [routerLink]="link.fragment">{{ link.title }}</a>
-        </li>
-    </ul>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Covid Napló</a>
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        (click)="navbarCollapsed = !navbarCollapsed"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+        [ngClass]="{
+            collapse: navbarCollapsed,
+            'navbar-collapse': navbarCollapsed
+        }"
+        id="navbarSupportedContent"
+    >
+        <ul
+            ngbNav
+            [activeId]="route.fragment | async"
+            class="navbar-nav mr-auto"
+        >
+            <li [ngbNavItem]="link.fragment" *ngFor="let link of links">
+                <a
+                    ngbNavLink
+                    [routerLink]="link.fragment"
+                    (click)="navbarCollapsed = true"
+                    >{{ link.title }}</a
+                >
+            </li>
+            <li>---------------------------------------------</li>
+        </ul>
+    </div>
 </nav>
 <router-outlet></router-outlet>
