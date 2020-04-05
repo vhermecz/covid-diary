@@ -24,6 +24,63 @@
         </div>
 
         <div class="form-group">
+            <label for="date">Hogy érzed magad?</label>
+            <div class="input-group">
+                <div class="col-2 offset-1">
+                    <button
+                        class="btn btn-secondary feeling"
+                        [class.selected]="model.feeling == 0"
+                        (click)="model.feeling = 0"
+                        type="button"
+                    >
+                        <fa-icon icon="grin"></fa-icon>
+                    </button>
+                </div>
+                <div class="col-2">
+                    <button
+                        class="btn btn-secondary feeling"
+                        [class.selected]="model.feeling == 1"
+                        (click)="model.feeling = 1"
+                        type="button"
+                    >
+                        <fa-icon icon="smile"></fa-icon>
+                    </button>
+                </div>
+                <div class="col-2">
+                    <button
+                        class="btn btn-secondary feeling"
+                        [class.selected]="model.feeling == 2"
+                        (click)="model.feeling = 2"
+                        type="button"
+                    >
+                        <fa-icon icon="meh"></fa-icon>
+                    </button>
+                </div>
+                <div class="col-2">
+                    <button
+                        class="btn btn-secondary feeling"
+                        [class.selected]="model.feeling == 3"
+                        (click)="model.feeling = 3"
+                        type="button"
+                    >
+                        <fa-icon icon="frown"></fa-icon>
+                    </button>
+                </div>
+                <div class="col-2">
+                    <button
+                        class="btn btn-secondary feeling"
+                        [class.selected]="model.feeling == 4"
+                        (click)="model.feeling = 4"
+                        type="button"
+                    >
+                        <fa-icon icon="sad-tear"></fa-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Tünetek</label>
             <div class="row">
                 <div *ngFor="let symptom of symptoms" class="col">
                     <button

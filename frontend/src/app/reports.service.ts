@@ -22,6 +22,7 @@ export class ReportsService {
           data.date = this.dateFormat.parse(data.date);
           return new Report(
             this.dateFormat.parse(data.date),
+            data.feeling,
             data.symptoms,
             data.comments
           );

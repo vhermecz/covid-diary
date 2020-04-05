@@ -10,7 +10,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 
 // Font Awesome
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faCalendar, faComments, faThermometer } from '@fortawesome/free-solid-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 
 // Application components
 import { environment } from '../environments/environment';
@@ -66,7 +66,6 @@ const appRoutes: Routes = [
 })
 export class AppModule {
   constructor(library: FaIconLibrary) {
-    // Add an icon to the library for convenient access in other components
-    library.addIcons(faCalendar, faComments, faThermometer);
+    library.addIconPacks(fas);
   }
 }
