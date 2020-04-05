@@ -1,15 +1,27 @@
+"""diarybase data models
+"""
+__author__ = "Gabor Guta"
+__copyright__ = "Copyright 2020, Gabor Guta"
+__license__ = "MIT"
+
 from django.contrib.auth.models import User
-from .models import Reporter, Symptom, EpidemicActivity
+from .models import Reporter, Symptoms, EpidemicActivity
 from rest_framework import serializers
+from rest_framework.relations import HyperlinkedIdentityField
 
 
-class ReporterSerializer(serializers.HyperlinkedModelSerializer):
+class SymptomSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Symptoms
+        fields = '__all__'
+
+
+class ReporterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Reporter
-        fields = ['zip', 'age', 'country_code']
-
-
-class SymptomSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Symptom
-        fields = ['timestamp']
+        fields = '__all__'
+        depth = 1
+ #   symptomsreports = HyperlinkedIdentityField(
+ #       view_name='reporter-symptomsreport-list',
+ #       lookup_url_kwarg='reporter_pk'
+ #   )

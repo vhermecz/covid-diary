@@ -13,12 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+"""diarybase data models
+"""
+__author__ = "Gabor Guta"
+__copyright__ = "Copyright 2020, Gabor Guta"
+__license__ = "MIT"
+
 from django.contrib import admin
 from django.urls import path, include
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('covidbase/', include('diarybase.urls')),
+    path('diarybase/', include('diarybase.urls')),
     path('api-auth', include('rest_framework.urls')),
 
 ]

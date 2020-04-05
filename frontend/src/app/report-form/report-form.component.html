@@ -1,5 +1,5 @@
 <div class="container">
-    <form #reportForm="ngForm">
+    <form #reportForm="ngForm" (ngSubmit)="submit()">
         <div class="form-group">
             <label for="date">Dátum</label>
             <div class="input-group">
@@ -7,8 +7,7 @@
                     class="form-control"
                     placeholder="yyyy-mm-dd"
                     name="date"
-                    [(ngModel)]="date"
-                    (dateSelect)="dateSelected($event)"
+                    [(ngModel)]="model.date"
                     ngbDatepicker
                     #d="ngbDatepicker"
                 />
@@ -25,6 +24,63 @@
         </div>
 
         <div class="form-group">
+            <label for="date">Hogy érzed magad?</label>
+            <div class="input-group">
+                <div class="col-2 offset-1">
+                    <button
+                        class="btn btn-secondary feeling"
+                        [class.selected]="model.feeling == 0"
+                        (click)="model.feeling = 0"
+                        type="button"
+                    >
+                        <fa-icon icon="grin"></fa-icon>
+                    </button>
+                </div>
+                <div class="col-2">
+                    <button
+                        class="btn btn-secondary feeling"
+                        [class.selected]="model.feeling == 1"
+                        (click)="model.feeling = 1"
+                        type="button"
+                    >
+                        <fa-icon icon="smile"></fa-icon>
+                    </button>
+                </div>
+                <div class="col-2">
+                    <button
+                        class="btn btn-secondary feeling"
+                        [class.selected]="model.feeling == 2"
+                        (click)="model.feeling = 2"
+                        type="button"
+                    >
+                        <fa-icon icon="meh"></fa-icon>
+                    </button>
+                </div>
+                <div class="col-2">
+                    <button
+                        class="btn btn-secondary feeling"
+                        [class.selected]="model.feeling == 3"
+                        (click)="model.feeling = 3"
+                        type="button"
+                    >
+                        <fa-icon icon="frown"></fa-icon>
+                    </button>
+                </div>
+                <div class="col-2">
+                    <button
+                        class="btn btn-secondary feeling"
+                        [class.selected]="model.feeling == 4"
+                        (click)="model.feeling = 4"
+                        type="button"
+                    >
+                        <fa-icon icon="sad-tear"></fa-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Tünetek</label>
             <div class="row">
                 <div *ngFor="let symptom of symptoms" class="col">
                     <button
@@ -34,8 +90,120 @@
                         [class.selected]="hasSymptom(symptom.id)"
                         (click)="toggleSymptom(symptom.id)"
                     >
-                        {{ symptom.hu }}
+                        {{ symptom.title }}
                     </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h4>Az elmúlt három napban...</h4>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Volt, hogy elhagytad a lakhelyed?</label>
+            <div class="input-group">
+                <select class="form-control">
+                    <option></option>
+                    <option>nem, karanténban voltam</option>
+                    <option>levegőzés / bevásárlás</option>
+                    <option>munkábajárás</option>
+                    <option>egészségügyi / más vészhelyzet</option>
+                </select>
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <fa-icon icon="comments"></fa-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Hány emberrel találkoztál?</label>
+            <div class="input-group">
+                <select class="form-control">
+                    <option></option>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2-6</option>
+                    <option>7-12</option>
+                    <option>13+</option>
+                </select>
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <fa-icon icon="comments"></fa-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Találkoztál ismert fertőzöttel?</label>
+            <div class="input-group">
+                <select class="form-control">
+                    <option></option>
+                    <option>nem tudok róla</option>
+                    <option>igen, de csak távolról</option>
+                    <option>igen, közelében is voltam</option>
+                </select>
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <fa-icon icon="comments"></fa-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="date"
+                >Találkoztál olyan emberrel, akinek felső légúti panaszai
+                voltak, vagy más miatt koronavírus-gyanűs?</label
+            >
+            <div class="input-group">
+                <select class="form-control">
+                    <option></option>
+                    <option>nem tudok róla</option>
+                    <option>igen, de csak távolról</option>
+                    <option>igen, közelében is voltam</option>
+                </select>
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <fa-icon icon="comments"></fa-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Voltál tesztelve?</label>
+            <div class="input-group">
+                <select class="form-control">
+                    <option></option>
+                    <option>nem</option>
+                    <option>igen, negatív lett</option>
+                    <option>igen, pozitív lett</option>
+                    <option>igen, még nem ismert az eredmény</option>
+                </select>
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <fa-icon icon="comments"></fa-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="comments">Megjegyzés</label>
+            <div class="input-group">
+                <textarea
+                    class="form-control"
+                    name="comments"
+                    [(ngModel)]="model.comments"
+                ></textarea>
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <fa-icon icon="comments"></fa-icon>
+                    </div>
                 </div>
             </div>
         </div>
@@ -43,5 +211,7 @@
         <button type="submit" class="btn btn-success">Tünetek jelentése</button>
     </form>
 
-    <pre>{{ model | json }}</pre>
+    <br /><br />
+
+    <!-- <pre>{{ model | json }}</pre> -->
 </div>

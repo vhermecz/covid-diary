@@ -1,13 +1,25 @@
 .symptom-button {
-    height: 8ex;
-    text-align: center;
-    width: 100%;
-    margin: 0.5rem;
-    font-size: 80%;
+  height: 8ex;
+  text-align: center;
+  width: 100%;
+  margin: 0.5rem;
+  font-size: 80%;
 }
 
-.symptom-button.selected {
-    border: 0.2rem solid red;
-    color: white;
-    background-color: #f88;
+button.symptom-button.selected {
+  border: 0.2rem solid red;
+  color: white;
+  background-color: #f88;
+}
+
+button.feeling {
+  border: 0.2rem solid darkgrey;
+  font-size: 1.5rem;
+  padding: 0.1rem 0.4rem;
+}
+
+button.feeling.selected {
+  border: 0.2rem solid green;
+  color: white;
+  background-color: #4a4;
 }
